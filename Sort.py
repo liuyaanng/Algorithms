@@ -35,3 +35,24 @@ def INSERTION_SORT_NE(sort):
         sort[insertion_index + 1] = key
 
     return sort
+
+def SELECT_SORT(sort):
+    """TODO: Docstring for SELECT_SORT.
+
+    :sort: TODO
+    :returns: TODO
+
+    """
+    count = len(sort)
+    for loop_index in range(count):
+        key = sort[loop_index]
+        for select_index in range(loop_index, count - 1):
+            if key > sort[select_index]:
+                key = sort[select_index]
+                index = select_index
+        sort[loop_index], sort[index] = sort[index], sort[loop_index]
+    #print("sort index is ", index)
+    #print("min is ", min)
+
+    return sort
+
