@@ -56,3 +56,37 @@ def SELECT_SORT(sort):
 
     return sort
 
+def MERGE_SORT(A, p, r):
+    """TODO: Docstring for MERGE_SORT.
+
+    :A: sort array
+    :p: begin index
+    :r: end index
+    :returns: sorted
+
+    """
+    if p < r:
+        q = (p + r) // 2
+        MERGE_SORT(A, p, q)
+        MERGE_SORT(A, q + 1, r)
+        MERGE(A, p, q, r)
+    return A
+
+def MERGE(A, p, q, r):
+    """TODO: Docstring for MERGE(A, p, q, r):.
+    :returns: TODO
+    """
+    L_arr = A[p:q+1] + [float('inf')]
+    R_arr = A[q+1:r+1] + [float('inf')]
+    L_index, R_index = 0, 0
+    for loop_index in range(p, r + 1):
+        if L_arr[L_index] <= R_arr[R_index]:
+            A[loop_index] = L_arr[L_index]
+            L_index += 1
+        else:
+            A[loop_index] = R_arr[R_index]
+            R_index += 1
+    
+
+
+
