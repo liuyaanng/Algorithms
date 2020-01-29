@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from random_list import random_int_list
-
+import my_scrip
 
 def INSERTION_SORT_IN(sort):
     """TODO: SORT array by increasing.
@@ -50,7 +50,8 @@ def SELECT_SORT(sort):
             if key > sort[select_index]:
                 key = sort[select_index]
                 index = select_index
-        sort[loop_index], sort[index] = sort[index], sort[loop_index]
+        #sort[loop_index], sort[index] = sort[index], sort[loop_index]
+        sort[loop_index], sort[index] = my_scrip.swap(sort[loop_index], sort[index])
     #print("sort index is ", index)
     #print("min is ", min)
 
